@@ -23,7 +23,9 @@ This script will stop and delete containers named `Lab` as the complement to the
 
 ## Todo
 - [ ] combine Start-BasicJupyterContainer.ps1 and Stop-BasicJupyterContainer.ps1
-- [ ] ?
+- [ ] Add persistent storage for notebooks
+- [ ] Add Setup instructions for StreamDeck
+- [ ] Maybe add some working indicator
 
 </br>
 
