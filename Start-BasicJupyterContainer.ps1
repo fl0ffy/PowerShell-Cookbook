@@ -35,7 +35,11 @@ if ( (docker ps -a -f name=${CONTAINER_NAME} | Select-String -CaseSensitive ${CO
 
 # Open firefox to jupyter Notebook
 $token = [regex]::Match((docker exec -ti Lab sh -c 'jupyter notebook list' 2>&1) , 'token=([0-9a-f]+)').captures.groups[1].value
-& 'C:\Program Files\Mozilla Firefox\firefox.exe' -new-window http://127.0.0.1:${PORT}/?token=${token}
 
+# Uncomment for Firefox
+# & 'C:\Program Files\Mozilla Firefox\firefox.exe' -new-window http://127.0.0.1:${PORT}/?token=${token}
+
+# Uncomment for Chrome
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --new-window http://127.0.0.1:${PORT}/?token=${token}
 
 #bring in Stop functionality from Stop-BasicJupyterContainer.ps1
