@@ -21,9 +21,13 @@ This script will stop and delete containers named `Lab` as the complement to the
 
 </br>  
 
+### **Volume mount**
+
+This script currently creates a folder on the users Desktop and mounts for persistence of notebooks and files and mounts it to the home directory of the container.
+
 ## Todo
 - [ ] combine Start-BasicJupyterContainer.ps1 and Stop-BasicJupyterContainer.ps1
-- [ ] Add persistent storage for notebooks
+- [X] Add persistent storage for notebooks
 - [ ] Add Setup instructions for StreamDeck
 - [ ] Maybe add some working indicator
 
