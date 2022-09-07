@@ -11,7 +11,7 @@ This project is to aggregate PowerShell scripts that I create to help run my dai
 
 ### **Start-BasicJupyterContainer.ps1**  
   
-This script uses Docker to start a container named `Lab` using the latest `jupyter/minimal-notebook` image from DockerHub. Once the container is started a new firefox window will open the notebook. This script can be run multiple times regardless of the status of the `Lab` container and will not clobber a container if it already exists in any condition.
+This script uses Docker to start a container named `Lab` using the latest `jupyter/minimal-notebook` image from DockerHub. Once the container is started the notebook will open in the default browser. This script can be run multiple times regardless of the status of the `Lab` container and will not clobber a container if it already exists in any condition. To enable persistenct, a volume will be mounted to the container from a folder on the users desktop named `jupyter-container-vol`. (Note: if the folder does not exist, this script will create it)
 
 </br>  
 
