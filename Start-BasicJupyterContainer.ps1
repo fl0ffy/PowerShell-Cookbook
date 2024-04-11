@@ -45,9 +45,12 @@ if ( (docker ps -a -f name=${CONTAINER_NAME} | Select-String -CaseSensitive ${CO
   Start-sleep 1
 }
 
+Start-Sleep 10
+
 # Open firefox to jupyter Notebook
 $token = [regex]::Match((docker logs Lab) , 'token=([0-9a-f]+)').captures.groups[1].value
 Write-Output "TOKEN = $($token)"
+
 
 & Start-Process http://127.0.0.1:$($PORT)/?token=$($token)
 #& 'C:\Program Files\Mozilla Firefox\firefox.exe' -new-window http://127.0.0.1:${PORT}/?token=${token}
