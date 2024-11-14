@@ -7,14 +7,12 @@ if ($args[0] -eq $null) {
 }
 
 
-$MY_AUTHENTICATOR_NAME = "<INSERT MFA IDENTITY>"
 $DEFAULT_PROFILE = "default"
-$DEFAULT_ACCOUNT = "<INSERT AWS ACCOUNT NUMBER>"
-$ARN_MFA = "arn:aws:iam::$($DEFAULT_ACCOUNT):mfa/$($MY_AUTHENTICATOR_NAME)"
 $TOKEN_DURATION = 86400 #24 hours
 $MFA_SOURCE_PROFILE = "<INSERT AWS CONFIG PROFILE NAME FOR MFA SESSION>"
 
-
+# Get MFA Identity
+$ARN_MFA = $(aws iam list-mfa-devices --output text | foreach-object {$_.Split()[2]})
 # Get session credentials
 $AWS_SESSION_TOKEN = $(aws sts get-session-token --duration-seconds $TOKEN_DURATION --serial-number $ARN_MFA --token-code $args[0] --profile $DEFAULT_PROFILE --output text)
 
