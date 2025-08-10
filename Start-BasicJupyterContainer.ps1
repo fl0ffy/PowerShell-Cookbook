@@ -7,7 +7,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -windowstyle hidden -f
 
 $PORT = '8888'
 $CONTAINER_NAME = 'Lab'
-$CONTAINER = 'jupyter/minimal-notebook:latest'
+$CONTAINER = 'quay.io/jupyter/scipy-notebook:latest'
 $VOL_MOUNT_DIR = "C:\Users\$($env:UserName)\Desktop\jupyter-container-vol"
 $VOL_MOUNT = '/home/jovyan'
 
